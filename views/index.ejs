@@ -9,12 +9,12 @@
 </head>
 <body>
 <h1>Google Authentication</h1>
-
-<% if(auth) {%>
-    <a href="<%= generatedUrl %>"><%= generatedUrl %></a>
-<%} else {%>
-    <a href="<%= url %>"><button type="button"><%= buttonSpan %></button></a>
-<%} %>
+<div>
+    <% if(auth) {%>
+        <a href="<%= generatedUrl %>" target="_blank"><%= generatedUrl %></a>
+    <%} %>
+</div>
+<a href="<%= url %>"><button type="button"><%= buttonSpan %></button></a>
 
 </body>
 </html>

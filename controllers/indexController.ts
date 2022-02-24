@@ -16,7 +16,7 @@ const renderHome = async function (req: Request, res: Response) {
         const randomID = uuid.v4();
         const generatedUrl = `http://localhost:8080/downloadJSon/${randomID}`;
 
-        res.render('index', {url: 'http://localhost:8080/logout', generatedUrl, auth: true})
+        res.render('index', {buttonSpan: 'Sign out', url: 'http://localhost:8080/logout', generatedUrl, auth: true})
     } else {
         res.render('index', {buttonSpan: 'Sign in', url: redirectUrl, generatedUrl: '', auth: false})
     }
@@ -60,7 +60,7 @@ const downloadJson = async (req: Request, res: Response) => {
             res.setHeader('Content-Type', 'application/json');
             res.setHeader('Content-disposition', 'attachment; filename=contacts.json');
             res.send(full_person_array);
-            return res.redirect('/')
+            // return res.redirect('/')
         } catch (e) {
             console.log(e)
         }
